@@ -5,24 +5,24 @@
   objects = {
     111111111111111111111111 /* Project */ = { isa = PBXProject; attributes = { LastUpgradeCheck = 1640; TargetAttributes = { 222222222222222222222222 = { CreatedOnToolsVersion = 16.4; }; }; }; buildConfigurationList = 121212121212121212121212; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = ( en, Base ); mainGroup = 333333333333333333333333; productRefGroup = 444444444444444444444444; projectDirPath = ""; projectRoot = ""; targets = ( 222222222222222222222222 ); };
     222222222222222222222222 /* Target */ = { isa = PBXNativeTarget; buildConfigurationList = 131313131313131313131313; buildPhases = ( 232323232323232323232323, 343434343434343434343434, 454545454545454545454545 ); buildRules = ( ); dependencies = ( ); name = WhatsAppSalesAutomation; productName = WhatsAppSalesAutomation; productReference = AAAAAAAAAAAAAAAAAAAAAAAA; productType = "com.apple.product-type.application"; };
-    333333333333333333333333 /* Main group */ = { isa = PBXGroup; children = ( 555555555555555555555555, 444444444444444444444444 ); sourceTree = "<group>"; };
+    333333333333333333333333 /* Main group */ = { isa = PBXGroup; children = ( 555555555555555555555555, 444444444444444444444444, AAAAAAAAAAAAAAAAAAAAAAAB ); sourceTree = "<group>"; };
     444444444444444444444444 /* Products */ = { isa = PBXGroup; children = ( AAAAAAAAAAAAAAAAAAAAAAAA ); name = Products; sourceTree = "<group>"; };
     555555555555555555555555 /* App group */ = { isa = PBXGroup; children = ( 666666666666666666666666, 777777777777777777777777, 888888888888888888888888, 999999999999999999999999 ); path = WhatsAppSalesAutomation; sourceTree = "<group>"; };
     666666666666666666666666 /* AppDelegate */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
     777777777777777777777777 /* SceneDelegate */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
     888888888888888888888888 /* ViewController */ = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
     999999999999999999999999 /* Info */ = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-    AAAAAAAAAAAAAAAAAAAAAAAA /* Product */ = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppSalesAutomation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+    AAAAAAAAAAAAAAAAAAAAAAAA /* Product */ = { isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsAppSalesAutomation.app; sourceTree = BUILT_PRODUCTS_DIR; }; AAAAAAAAAAAAAAAAAAAAAAAB /* AppIcon catalog */ = { isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
     B1B1B1B1B1B1B1B1B1B1B1B1 /* UIKit */ = { isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
     C1C1C1C1C1C1C1C1C1C1C1C1 /* WebKit */ = { isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
     D1D1D1D1D1D1D1D1D1D1D1D1 /* AppDelegate build */ = { isa = PBXBuildFile; fileRef = 666666666666666666666666; };
     E1E1E1E1E1E1E1E1E1E1E1E1 /* SceneDelegate build */ = { isa = PBXBuildFile; fileRef = 777777777777777777777777; };
     F1F1F1F1F1F1F1F1F1F1F1F1 /* ViewController build */ = { isa = PBXBuildFile; fileRef = 888888888888888888888888; };
     A2A2A2A2A2A2A2A2A2A2A2A2 /* UIKit build */ = { isa = PBXBuildFile; fileRef = B1B1B1B1B1B1B1B1B1B1B1B1; };
-    B2B2B2B2B2B2B2B2B2B2B2B2 /* WebKit build */ = { isa = PBXBuildFile; fileRef = C1C1C1C1C1C1C1C1C1C1C1C1; };
+    B2B2B2B2B2B2B2B2B2B2B2B2 /* WebKit build */ = { isa = PBXBuildFile; fileRef = C1C1C1C1C1C1C1C1C1C1C1C1; }; C2C2C2C2C2C2C2C2C2C2C2C2 /* AppIcon build */ = { isa = PBXBuildFile; fileRef = AAAAAAAAAAAAAAAAAAAAAAAB; };
     232323232323232323232323 /* Sources */ = { isa = PBXSourcesBuildPhase; files = ( D1D1D1D1D1D1D1D1D1D1D1D1, E1E1E1E1E1E1E1E1E1E1E1E1E1, F1F1F1F1F1F1F1F1F1F1F1F1 ); };
     343434343434343434343434 /* Frameworks */ = { isa = PBXFrameworksBuildPhase; files = ( A2A2A2A2A2A2A2A2A2A2A2A2, B2B2B2B2B2B2B2B2B2B2B2B2 ); };
-    454545454545454545454545 /* Resources */ = { isa = PBXResourcesBuildPhase; files = ( ); };
+    454545454545454545454545 /* Resources */ = { isa = PBXResourcesBuildPhase; files = ( C2C2C2C2C2C2C2C2C2C2C2C2 ); };
     121212121212121212121212 /* Project configs */ = { isa = XCConfigurationList; buildConfigurations = ( 565656565656565656565656, 676767676767676767676767 ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
     131313131313131313131313 /* Target configs */ = { isa = XCConfigurationList; buildConfigurations = ( 787878787878787878787878, 898989898989898989898989 ); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
     565656565656565656565656 /* Project Debug */ = { isa = XCBuildConfiguration; buildSettings = { ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; IPHONEOS_DEPLOYMENT_TARGET = 15.0; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; }; name = Debug; };
