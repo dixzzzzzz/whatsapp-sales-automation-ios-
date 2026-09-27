@@ -1,0 +1,76 @@
+name: Build unsigned iOS IPA
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract mobile project
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP_FILE="$(find . -maxdepth 1 -type f -iname '*.zip' -print -quit)"
+          if [ -z "${ZIP_FILE}" ]; then
+            echo "No project ZIP found in repository root"
+            exit 1
+          fi
+          unzip -q "${ZIP_FILE}"
+          test -f mobile-ios/package.json
+          test -d mobile-ios/ios
+          test -d mobile-ios/assets
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: mobile-ios/package-lock.json
+
+      - name: Install JavaScript dependencies
+        working-directory: mobile-ios
+        run: npm ci
+
+      - name: Install CocoaPods dependencies
+        working-directory: mobile-ios/ios
+        run: pod install
+
+      - name: Build unsigned iOS app
+        working-directory: mobile-ios
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild \
+            -workspace ios/WhatsAppSalesAutomation.xcworkspace \
+            -scheme WhatsAppSalesAutomation \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Package unsigned IPA
+        working-directory: mobile-ios
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP_PATH="build/Build/Products/Release-iphoneos/WhatsAppSalesAutomation.app"
+          test -d "${APP_PATH}"
+          rm -rf Payload WhatsAppSalesAutomation-unsigned.ipa
+          mkdir Payload
+          cp -R "${APP_PATH}" Payload/
+          zip -qry WhatsAppSalesAutomation-unsigned.ipa Payload
+
+      - name: Upload unsigned IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: whatsapp-sales-automation-unsigned-ipa
+          path: mobile-ios/WhatsAppSalesAutomation-unsigned.ipa
+          if-no-files-found: error
